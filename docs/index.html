@@ -1187,25 +1187,7 @@
         }
 
         let occurrencesHtml = "";
-        if (q.occurrences && q.occurrences.length > 0) {
-          const listItems = q.occurrences.map(o => {
-            const fName = o.source_file || "نامشخص";
-            const qNum = o.source_question_number ? `سؤال ${toFaDigit(o.source_question_number)}` : "";
-            const pageNum = o.source_page ? `صفحه ${toFaDigit(o.source_page)}` : "";
-            return `<li>${fName} ${qNum} ${pageNum}</li>`;
-          }).join("");
-
-          occurrencesHtml = `
-            <div class="q-occurrences">
-              <details>
-                <summary>منابع و محل‌های مشاهده سؤال</summary>
-                <ul class="q-occurrences-list">
-                  ${listItems}
-                </ul>
-              </details>
-            </div>
-          `;
-        }
+        // Occurrences rendering removed per user request to simplify question display.
 
         // Render card
         cardArea.innerHTML = `
